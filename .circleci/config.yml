@@ -35,7 +35,31 @@ jobs:
             . venv/bin/activate
             make lint
 
+  build-docker:
+    working_directory: /app
+    docker:
+      - image: docker:17.05.0-ce-git
+
+    steps:
+      - checkout
+      - setup_remote_docker
+
+      - run:
+          name: Build application Docker image
+          command: |
+            docker build -t huylq1999/capstone_aws_devops .
+            docker image ls
+
+      - run:
+          name: Push to Dockerhub
+          command: |
+            docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
+            docker push huylq1999/capstone_aws_devops
+
 workflows:
   default:
     jobs:
       - build-test-lint
+      - build-docker:
+          requires:
+            - build-test-lint

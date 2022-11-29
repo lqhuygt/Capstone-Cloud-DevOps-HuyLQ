@@ -56,6 +56,27 @@ jobs:
             docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
             docker push huylq1999/capstone_aws_devops
 
+  config-infrastructure:
+    docker:
+        - image: amazon/aws-cli
+      steps:
+        - checkout
+
+        - run:
+            name: Install eksctl
+            command: |
+              sudo apt-get update
+              curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C ./bin
+              chmod +x ./bin/eksctl
+              ./bin/eksctl version
+
+        - run:
+            name: Install kubectl
+            comand: |
+              curl -sSLo ./bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+              chmod +x ./bin/kubectl
+              ./bin/kubectl version --client
+
 workflows:
   default:
     jobs:
@@ -63,3 +84,6 @@ workflows:
       - build-docker:
           requires:
             - build-test-lint
+      - config-infrastructure:
+          requires:
+            - build-docker

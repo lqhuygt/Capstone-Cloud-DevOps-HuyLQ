@@ -90,11 +90,7 @@ jobs:
       - run:
           name: Configure aws cli
           command: |
-            aws configure
-            "$AWS_ACCESS_KEY_ID"
-            "$AWS_SECRET_ACCESS_KEY"
-            "$AWS_DEFAULT_REGION"
-            json
+            aws configure >> "$AWS_ACCESS_KEY_ID" >> "$AWS_SECRET_ACCESS_KEY" >> "$AWS_DEFAULT_REGION" >> json
             aws configure list
 
 

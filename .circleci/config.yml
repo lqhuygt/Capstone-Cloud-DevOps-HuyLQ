@@ -58,14 +58,13 @@ jobs:
 
   config-infrastructure:
     docker:
-      - image: amazon/aws-cli
+      - image: ubuntu-2004:202010-01
 
     steps:
       - checkout
       - run:
           name: Install eksctl
           command: |
-            # sudo apt-get update
             curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C ./bin
             chmod +x ./bin/eksctl
             ./bin/eksctl version

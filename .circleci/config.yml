@@ -58,7 +58,7 @@ jobs:
 
   config-infrastructure:
     docker:
-      - image: ubuntu-2004:202010-01
+      - image: python:3.7.3-stretch
 
     steps:
       - checkout

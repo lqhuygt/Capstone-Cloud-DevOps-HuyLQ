@@ -69,7 +69,7 @@ jobs:
             ls -la
             curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /home/circleci/project
             ls -la eksctl
-            ./home/circleci/project/eksctl version
+            # /home/circleci/project/eksctl version
 
       - run:
           name: Install kubectl

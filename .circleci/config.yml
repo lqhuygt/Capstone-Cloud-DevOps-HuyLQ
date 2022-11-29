@@ -93,8 +93,11 @@ jobs:
             ls -la
             ls aws
             cat aws/config
-            # aws configure >> "$AWS_ACCESS_KEY_ID" >> "$AWS_SECRET_ACCESS_KEY" >> "$AWS_DEFAULT_REGION" >> json
-            # aws configure list
+            aws configure 
+            $(AWS_ACCESS_KEY_ID)
+            $(AWS_SECRET_ACCESS_KEY)
+            $(AWS_DEFAULT_REGION)
+            aws configure list
 
 
 workflows:

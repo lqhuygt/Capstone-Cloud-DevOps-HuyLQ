@@ -58,7 +58,7 @@ jobs:
 
   config-infrastructure:
     docker:
-      - image: cimg/base:2022.11
+      - image: python:3.7.3-stretch
 
     steps:
       - checkout

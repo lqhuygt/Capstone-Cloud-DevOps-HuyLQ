@@ -91,7 +91,7 @@ jobs:
           name: Configure aws cli
           command: |
             ls -la
-            cat .aws/config
+            cat aws/config
             # aws configure >> "$AWS_ACCESS_KEY_ID" >> "$AWS_SECRET_ACCESS_KEY" >> "$AWS_DEFAULT_REGION" >> json
             # aws configure list
 

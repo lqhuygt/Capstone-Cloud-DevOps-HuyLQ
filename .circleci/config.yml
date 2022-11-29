@@ -96,6 +96,7 @@ jobs:
             # unzip awscliv2.zip
             # ./aws/install
             aws --version
+            aws configure list
 
       # - run:
       #     name: Configure aws cli

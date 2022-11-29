@@ -62,7 +62,6 @@ jobs:
 
     steps:
       - checkout
-
       - run:
           name: Install eksctl
           command: |

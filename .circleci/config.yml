@@ -97,7 +97,7 @@ jobs:
       - run:
           name: deploy k8s cluster
           command: |
-            # eksctl create cluster -f eks_cluster.yml
+            eksctl create cluster -f eks_cluster.yml
             kubectl get nodes
             kubectl run capstone-kube --image=huylq1999/capstone_aws_devops --port=5000
             kubectl get pods

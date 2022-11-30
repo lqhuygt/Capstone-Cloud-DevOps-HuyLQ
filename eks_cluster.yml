@@ -2,7 +2,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: huylq-cluster
+  name: huylq
   region: us-west-2
 
 nodeGroups:

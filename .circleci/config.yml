@@ -67,26 +67,30 @@ jobs:
     steps:
       - checkout
 
-      - aws-cli/setup:
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: AWS_DEFAULT_REGION
+      - add_ssh_keys:
+          fingerprints:
+            - "91:26:dd:e2:ca:b6:8d:08:02:80:22:48:be:6e:18:1c:8d:7b:d2:97"
 
-      - run:
-          name: Check aws cli
-          command: |
-            aws --version
-            aws configure list
+      # - aws-cli/setup:
+      #     aws-access-key-id: AWS_ACCESS_KEY_ID
+      #     aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+      #     aws-region: AWS_DEFAULT_REGION
+
+      # - run:
+      #     name: Check aws cli
+      #     command: |
+      #       aws --version
+      #       aws configure list
 
       - run: 
           name: Test ssh to ec2 instance
           command: |
-            echo "$KEY_PAIR_EC2" >> huylq23-keypair.pem
-            ls -l
-            chmod 400 huylq23-keypair.pem
-            ls -l
-            ssh -i "huylq23-keypair.pem" ec2-user@ec2-44-204-194-68.compute-1.amazonaws.com
-            yes
+            # echo "$KEY_PAIR_EC2" >> huylq23-keypair.pem
+            # ls -l
+            # chmod 400 huylq23-keypair.pem
+            # ls -l
+            # ssh -i "huylq23-keypair.pem" ec2-user@ec2-44-204-194-68.compute-1.amazonaws.com
+            # yes
             aws --version
 
 

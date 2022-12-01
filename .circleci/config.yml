@@ -90,10 +90,9 @@ jobs:
             ls -l
             chmod 400 huylq23-keypair.pem
             ls -l
-            cat huylq23-keypair.pem
-            # ssh ec2-user@ec2-44-204-194-68.compute-1.amazonaws.com
-            # yes
-            # aws --version
+            ssh ec2-user@ec2-44-204-194-68.compute-1.amazonaws.com
+            yes
+            aws --version
 
 
 

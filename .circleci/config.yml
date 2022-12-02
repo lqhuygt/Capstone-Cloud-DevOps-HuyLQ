@@ -85,11 +85,11 @@ jobs:
       - run: 
           name: Test ssh to ec2 instance
           command: |
-            # pwd
-            # echo "$KEY_PAIR_EC2" >> huylq23-keypair.pem
-            # ls -l
-            # chmod 400 huylq23-keypair.pem
-            # ls -l
+            pwd
+            echo "$KEY_PAIR_EC2" >> huylq23-keypair.pem
+            ls -l
+            chmod 400 huylq23-keypair.pem
+            ls -l
             apt update
             apt install expect -y
             expect -c 'spawn ssh ec2-user@ec2-54-88-122-197.compute-1.amazonaws.com; expect "Are you sure"; send "yes\r"; interact'

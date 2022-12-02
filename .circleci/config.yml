@@ -69,7 +69,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - "91:26:dd:e2:ca:b6:8d:08:02:80:22:48:be:6e:18:1c:8d:7b:d2:97"
+            - "a5:dd:83:57:81:5e:1a:78:84:a6:27:e7:cb:b9:ec:41"
 
       - aws-cli/setup:
           aws-access-key-id: AWS_ACCESS_KEY_ID
@@ -85,16 +85,15 @@ jobs:
       - run: 
           name: Test ssh to ec2 instance
           command: |
-            pwd
-            echo "$KEY_PAIR_EC2" >> huylq23-keypair.pem
-            ls -l
-            chmod 400 huylq23-keypair.pem
-            ls -l
+            # pwd
+            # echo "$KEY_PAIR_EC2" >> huylq23-keypair.pem
+            # ls -l
+            # chmod 400 huylq23-keypair.pem
+            # ls -l
             apt update
             apt install expect -y
-            openssl rsa -check -in huylq23-keypair.pem -noout
-            # expect -c 'spawn ssh -i "huylq23-keypair.pem" ec2-user@ec2-54-88-122-197.compute-1.amazonaws.com; expect "Are you sure"; send "yes\r"; interact'
-            # aws --version
+            expect -c 'spawn ssh ec2-user@ec2-54-88-122-197.compute-1.amazonaws.com; expect "Are you sure"; send "yes\r"; interact'
+            aws --version
 
 
 

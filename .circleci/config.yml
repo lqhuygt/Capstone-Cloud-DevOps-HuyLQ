@@ -94,7 +94,6 @@ jobs:
             chmod +x ssh_ec2.sh
             ./ssh_ec2.sh
 
-
       # - run:
       #     name: Install eksctl
       #     command: |

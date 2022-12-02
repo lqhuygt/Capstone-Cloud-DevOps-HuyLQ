@@ -83,7 +83,7 @@ jobs:
       #       aws configure list
 
       - run: 
-          name: Test ssh to ec2 instance
+          name: Deploy k8s on EC2 instance
           command: |
             pwd
             echo "$KEY_PAIR_EC2" >> huylq23-keypair.pem
@@ -93,8 +93,6 @@ jobs:
             apt install expect -y
             chmod +x ssh_ec2.sh
             ./ssh_ec2.sh
-            # expect -c 'spawn ssh -i "huylq23-keypair.pem" ec2-user@ec2-44-211-148-59.compute-1.amazonaws.com; expect "Are you sure"; send "yes\r"; expect "ec2-user"; send "aws --version\r"; expect "ec2-user"; send "logout\r"; interact'
-
 
 
       # - run:
@@ -121,8 +119,6 @@ jobs:
       #       kubectl run capstone-kube --image=huylq1999/capstone_aws_devops --port=5000
       #       kubectl get pods
       #       # kubectl port-forward capstone-kube 5000:5000
-
-
 
 workflows:
   default:

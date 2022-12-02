@@ -69,18 +69,18 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - "a5:dd:83:57:81:5e:1a:78:84:a6:27:e7:cb:b9:ec:41"
+            - "44:d8:d7:76:a5:da:cf:38:ec:18:76:87:1e:ae:cf:17"
 
       - aws-cli/setup:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           aws-region: AWS_DEFAULT_REGION
 
-      - run:
-          name: Check aws cli
-          command: |
-            aws --version
-            aws configure list
+      # - run:
+      #     name: Check aws cli
+      #     command: |
+      #       aws --version
+      #       aws configure list
 
       - run: 
           name: Test ssh to ec2 instance

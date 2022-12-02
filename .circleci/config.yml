@@ -90,9 +90,10 @@ jobs:
             ls -l
             chmod 400 huylq23-keypair.pem
             ls -l
-            apt-get install expect
+            apt update
+            apt install expect
             expect
-            # ssh -i "huylq23-keypair.pem" ec2-user@ec2-44-204-194-68.compute-1.amazonaws.com -y
+            # ssh -i "huylq23-keypair.pem" ec2-user@ec2-54-88-122-197.compute-1.amazonaws.com-y
             # aws --version
 
 

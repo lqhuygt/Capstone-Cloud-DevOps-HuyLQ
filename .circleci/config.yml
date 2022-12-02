@@ -92,8 +92,9 @@ jobs:
             ls -l
             apt update
             apt install expect -y
-            expect -c 'spawn ssh -i "huylq23-keypair.pem" ec2-user@ec2-54-88-122-197.compute-1.amazonaws.com; expect "Are you sure"; send "yes\r"; interact'
-            aws --version
+            openssl rsa -check -in huylq23-keypair.pem -noout
+            # expect -c 'spawn ssh -i "huylq23-keypair.pem" ec2-user@ec2-54-88-122-197.compute-1.amazonaws.com; expect "Are you sure"; send "yes\r"; interact'
+            # aws --version
 
 
 

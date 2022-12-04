@@ -1,4 +1,5 @@
 # Cloud DevOps Engineer Capstone Project
+![CircleCI](https://circleci.com/gh/lqhuygt/Capstone-Cloud-DevOps-HuyLQ.svg?style=svg)
 
 ## Project Overview
 

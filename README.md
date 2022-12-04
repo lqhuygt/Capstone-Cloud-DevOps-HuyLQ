@@ -46,5 +46,3 @@ You need to set up the following environment variables in your CircleCI project 
 * [eks_cluster.yml](./eks_cluster.yml): EKS cluster definition file
 * [deploy_k8s.sh](./deploy_k8s.sh): scripts file to run command on k8s
 * [requirements.txt](./requirements.txt): file to install library for app
-
-

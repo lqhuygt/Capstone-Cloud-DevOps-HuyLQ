@@ -1,6 +1,6 @@
 #!/usr/bin/expect -f
 
-spawn ssh -i "huylq23-keypair.pem" ec2-user@ec2-54-82-205-140.compute-1.amazonaws.com
+spawn ssh -i "huylq23-keypair.pem" ec2-user@ec2-44-201-115-166.compute-1.amazonaws.com
 expect "Are you sure" { send "yes\r" } 
 expect "ec2-user" { send "kubectl get nodes\r" }
 expect "ec2-user" { send "kubectl run capstone_aws_devops --image=huylq1999/capstone_aws_devops --port=5000\r" }

@@ -59,7 +59,7 @@ jobs:
             docker login -u="$DOCKERHUB_USERNAME" -p="$DOCKERHUB_PASSWORD"
             docker push huylq1999/capstone_aws_devops
 
-  config-infrastructure:
+  deploy-k8s:
     executor: aws-cli/default
     docker:
       - image: python:3.7.3-stretch
@@ -126,7 +126,7 @@ workflows:
       - build-docker:
           requires:
             - build-test-lint
-      - config-infrastructure:
+      - deploy-k8s:
           context: aws
           requires:
             - build-docker
